@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.brickmmo.com/exceptions@1.0.0/fontawesome.css">
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -25,6 +26,7 @@
             </div>
             <div class="w3-col s6 w3-right-align"></div>
         </nav>
+
 
         <hr>
     
