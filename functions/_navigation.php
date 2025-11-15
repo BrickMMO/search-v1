@@ -13,20 +13,16 @@ function navigation_array($selected = false)
                     'pages' => [
                         [
                             'icon' => 'search',
-                            'url' => '/search',
+                            'url' => '/search/form',
                             'title' => 'Search',
                             'sub-pages' => [
                                 [
                                     'title' => 'Search',
-                                    'url' => '/search',
+                                    'url' => '/search/form',
                                     'colour' => 'red',
                                 ],[
                                     'title' => 'Results',
                                     'url' => '/search/results',
-                                    'colour' => 'red',
-                                ],[
-                                    'title' => 'Dump',
-                                    'url' => '/search/dump',
                                     'colour' => 'red',
                                 ],[
                                     'br' => '---',

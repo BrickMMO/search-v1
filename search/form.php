@@ -5,7 +5,7 @@ security_check();
 define('APP_NAME', '<i class="bm-search"></i> Search');
 define('PAGE_TITLE', 'Search');
 define('PAGE_SELECTED_SECTION', 'search');
-define('PAGE_SELECTED_SUB_PAGE', '/search');
+define('PAGE_SELECTED_SUB_PAGE', '/search/form');
 
 include('../templates/html_header.php');
 include('../templates/nav_header.php');
@@ -31,9 +31,8 @@ include('../templates/message.php');
 <p>This will be your search page.</p>
 
 <ul>
-    <li><a href="/search">Search</a></li>
+    <li><a href="/search/form">Search</a></li>
     <li><a href="/search/results">Results</a></li>
-    <li><a href="/search/dump">Dump</a></li>
 </ul>
 
 <?php

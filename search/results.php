@@ -31,9 +31,8 @@ include('../templates/message.php');
 <p>This will be your search results page.</p>
 
 <ul>
-    <li><a href="/search">Search</a></li>
+    <li><a href="/search/form">Search</a></li>
     <li><a href="/search/results">Results</a></li>
-    <li><a href="/search/dump">Dump</a></li>
 </ul>
 
 <?php
