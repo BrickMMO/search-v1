@@ -2,7 +2,7 @@
 
 security_check();
 
-define('APP_NAME', '<i class="bm-search"></i> Search');
+define('APP_NAME', 'Search');
 define('PAGE_TITLE', 'Search Results');
 define('PAGE_SELECTED_SECTION', 'search');
 define('PAGE_SELECTED_SUB_PAGE', '/search/results');
