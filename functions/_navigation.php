@@ -5,42 +5,46 @@ function navigation_array($selected = false)
 
     $navigation = [
         [
-            'title' => 'Events',
+            'title' => 'Search',
             'sections' => [
                 [
-                    'title' => 'Events',
-                    'id' => 'admin-content',
+                    'title' => 'Search',
+                    'id' => 'search-content',
                     'pages' => [
                         [
-                            'icon' => 'events',
-                            'url' => '/admin/dashboard',
-                            'title' => 'Events',
+                            'icon' => 'search',
+                            'url' => '/search',
+                            'title' => 'Search',
                             'sub-pages' => [
                                 [
-                                    'title' => 'Dashboard',
-                                    'url' => '/admin/dashboard',
+                                    'title' => 'Search',
+                                    'url' => '/search',
                                     'colour' => 'red',
                                 ],[
-                                    'title' => 'Add Event',
-                                    'url' => '/admin/add',
+                                    'title' => 'Results',
+                                    'url' => '/search/results',
+                                    'colour' => 'red',
+                                ],[
+                                    'title' => 'Dump',
+                                    'url' => '/search/dump',
                                     'colour' => 'red',
                                 ],[
                                     'br' => '---',
                                 ],[
-                                    'title' => 'Visit Events App',
-                                    'url' => 'https://events.brickmmo.com',
+                                    'title' => 'Visit Search App',
+                                    'url' => 'https://search.brickmmo.com',
                                     'colour' => 'orange',
                                     'icon' => 'fa-solid fa-arrow-up-right-from-square',
                                 ],[
                                     'br' => '---',
                                 ],[
                                     'title' => 'Uptime Report',
-                                    'url' => '/uptime/events',
+                                    'url' => '/uptime/search',
                                     'colour' => 'orange',
                                     'icons' => 'bm-uptime',
                                 ],[
                                     'title' => 'Stats Report',
-                                    'url' => '/stas/events',
+                                    'url' => '/stats/search',
                                     'colour' => 'orange',
                                     'icons' => 'bm-stats',
                                 ],
