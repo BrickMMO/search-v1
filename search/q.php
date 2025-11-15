@@ -166,7 +166,7 @@ if(isset($q))
                     <td class="w3-padding">
                         <?=$display['title'] ? $display['title'] : 'Missing Title'?>
                         <br>
-                        <a href="<?=$display['url']?>" target="_blank"><?=$display['url']?></a>
+                        <a href="<?=$display['url']?>"><?=$display['url']?></a>
                     </td>
                 </tr>
             <?php endwhile; ?>
