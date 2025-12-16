@@ -9,7 +9,7 @@ include('../../functions/functions.php');
 $query = 'SELECT *
     FROM pages
     -- WHERE id = 334
-    ORDER BY updated_at ASC
+    ORDER BY linked_at ASC
     LIMIT 1';
 $result = mysqli_query($connect, $query);
 
