@@ -19,6 +19,7 @@ The following additions can be made to search results and the spiders:
 - Search Applications
 - Search Brix (not yet)
 - Search Contributors (can be added to spiders) (not yet)
+- Fix the pagination
 
 Improve Spider to Classify Pages
 
