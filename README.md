@@ -17,9 +17,18 @@ The following additions can be made to search results and the spiders:
 - Easter eggs
 - Search GiHub, Instagram, TikTok, and YouTube
 - Search Applications
-- Search Brix
-- Search Contributors (can be added to spiders)
-- Display results differently based on type
+- Search Brix (not yet)
+- Search Contributors (can be added to spiders) (not yet)
+
+Improve Spider to Classify Pages
+
+- Events
+- Colours
+- Parts/Sets
+
+Based on Serach Term Diplsya Pre-Result Content
+
+Based on Reasult Dipslay Differently
 
 ---
 
