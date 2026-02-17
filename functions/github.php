@@ -23,6 +23,7 @@ function github_revoke($access_token)
         "Authorization: Basic ". base64_encode(GITHUB_CLIENT_ID.':'.GITHUB_CLIENT_SECRET),
         'User-Agent: BrickMMO',
     ];
+    
 
     $data = [
         'access_token' => $access_token,
