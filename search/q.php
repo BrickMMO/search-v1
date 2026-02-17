@@ -202,16 +202,38 @@ if(isset($q))
         <div class="w3-bar">            
 
             <?php
-            
-            // Display pagination links
-            for ($i = 1; $i <= $total_pages; $i++) 
-            {
-                echo '<a href="'.ENV_DOMAIN.'/q';
-                if($i > 1) echo '/page/'.$i;
-                echo '/'.$q.'" class="w3-button';
-                if($i == $current_page) echo ' w3-border';
-                echo '">'.$i.'</a>';
-            }
+
+                $page_count = 10;
+
+                $start_page = max(1, $current_page - ($page_count/2));
+                $end_page = $start_page + $page_count - 1;
+
+                if($end_page > $total_pages){
+                    $end_page=$total_pages;
+                    $start_page = max(1, $end_page - $page_count +1);
+                }
+
+                if($start_page>1){
+                    $previous_page=$current_page-1;
+                    echo '<a href="'.ENV_DOMAIN.'/q/page/'.$previous_page.'/'.$q.'" class="w3-button">Previous</a>';
+                }
+
+                // Display pagination links
+                for ($i = $start_page; $i <= $end_page; $i++) 
+                    {
+                        echo '<a href="'.ENV_DOMAIN.'/q';
+                        if($i > 1) echo '/page/'.$i;
+                        echo '/'.$q.'" class="w3-button';
+                        if($i == $current_page) echo ' w3-border';
+                        echo '">'.$i.'</a>';
+
+                    }
+
+                if($end_page < $total_pages){
+                    $next_page = $current_page+1;
+                    echo '<a href="'.ENV_DOMAIN.'/q/page/'.$next_page.'/'.$q.'" class="w3-button">Next</a>';
+                }
+
 
             ?>
 

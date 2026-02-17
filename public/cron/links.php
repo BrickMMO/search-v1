@@ -6,6 +6,7 @@ include('../../functions/functions.php');
 
 // DELETE FROM pages WHERE page_id != 0
 
+
 $query = 'SELECT *
     FROM pages
     '.(isset($_GET['id']) ? 'WHERE id = '.$_GET['id'] : '').'
