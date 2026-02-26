@@ -23,7 +23,8 @@ if(mysqli_num_rows($result))
     $query = 'UPDATE pages SET
         updated_at = NOW(),
         linked_at = NOW(),
-        status = NULL
+        status = NULL,
+        source = "Webpage" 
         WHERE id = '.$page['id'].'
         LIMIT 1';
     mysqli_query($connect, $query);
@@ -78,6 +79,7 @@ if(mysqli_num_rows($result))
                         $query = 'INSERT INTO pages (
                                 url, 
                                 page_id,
+                                source, 
                                 linked_at,
                                 scrapped_at,
                                 created_at, 
@@ -85,6 +87,7 @@ if(mysqli_num_rows($result))
                             ) VALUES (
                                 "'.$link.'",
                                 "'.$page['id'].'",
+                                "Webpage",
                                 NULL,
                                 NULL,
                                 NOW(),
@@ -132,6 +135,7 @@ if(mysqli_num_rows($result))
                     $query = 'INSERT INTO pages (
                             url, 
                             page_id,
+                            source,
                             linked_at,
                             scrapped_at,
                             created_at, 
@@ -139,6 +143,7 @@ if(mysqli_num_rows($result))
                         ) VALUES (
                             "'.$link.'",
                             "'.$page['id'].'",
+                            "Webpage",
                             NULL,
                             NULL,
                             NOW(),
@@ -170,3 +175,6 @@ if(isset($_GET['auto']))
         '";}, 2000);
     </script>';
 }
+
+
+//include('classifier.php');

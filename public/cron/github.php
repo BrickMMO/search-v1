@@ -55,10 +55,30 @@ while ($hasresults){
         $repo_url = mysqli_real_escape_string($connect, $item['html_url']);
         $description = mysqli_real_escape_string($connect, $item['description']);
 
-        $query = "INSERT INTO github_repo(repo_id, repo_name, repo_url, description, scrapped_at, created_at)
-                VALUES ($repo_id, '$repo_name', '$repo_url', '$description', NOW(), NOW())
-                ON DUPLICATE KEY UPDATE
-                scrapped_at = NOW()";
+        
+        $pagesinsert_query = "INSERT INTO pages (url, title, source, page_id, linked_at, scrapped_at, created_at, updated_at)
+                                VALUES ('$repo_url', '$repo_name', 'Github', 0, NULL, NOW(), NOW(), NOW()) 
+                                ON DUPLICATE KEY UPDATE
+                                id = LAST_INSERT_ID(id),
+                                title = VALUES(title),
+                                source = 'Github',
+                                updated_at = NOW()";
+
+        
+        mysqli_query($connect, $pagesinsert_query);
+
+        $page_id = mysqli_insert_id($connect); //Get id from pages table
+        
+        $query = "INSERT INTO github_repodummy(repo_id, page_id, description, scrapped_at, created_at)
+                  VALUES ($repo_id, $page_id, '$description', NOW(), NOW())
+                  ON DUPLICATE KEY UPDATE
+                  description = VALUES(description),
+                  scrapped_at = NOW()";
+
+        // $query = "INSERT INTO github_repo(repo_id, repo_name, repo_url, description, scrapped_at, created_at)
+        //         VALUES ($repo_id, '$repo_name', '$repo_url', '$description', NOW(), NOW())
+        //         ON DUPLICATE KEY UPDATE
+        //         scrapped_at = NOW()";//Descripion to update;
 
         mysqli_query($connect, $query);
 
